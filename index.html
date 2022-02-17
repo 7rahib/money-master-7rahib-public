@@ -16,27 +16,41 @@
 </head>
 
 <body>
+
+    <!-- Header -->
     <header class="container">
         <h1 class="text-center my-3 text-primary">Money Tracker</h1>
     </header>
     <main>
+
+        <!-- Main Section -->
         <section class="container">
             <div class=" container ">
                 <div class=" row justify-content-center align-items-center">
+
+                    <!-- Image Section-->
                     <div class="col-lg-5 col-sm-12">
                         <img class="img-fluid mb-3 rounded-2" src="images/money.jpg" alt="">
                     </div>
 
-                    <div class="col-lg-5 col-sm-12 mx-auto bg-secondary bg-gradient bg-opacity-10 rounded-3 px-5">
+                    <!-- Calculating Section -->
+                    <div
+                        class="col-lg-5 col-sm-12 mx-auto bg-secondary bg-gradient bg-opacity-10 rounded-3 px-5 shadow">
                         <h4 class="text-center pt-2">Income</h4>
                         <div class="row mb-3">
+
+                            <!-- Income Section -->
                             <label for="colFormLabel" class="col-sm-2 col-form-label fw-bold">Salary</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="salary-amount"
                                     placeholder="Enter Salary Received">
                             </div>
                         </div>
+
+                        <!-- Expense Section -->
                         <h4 class="text-center">Expenses</h4>
+
+                        <!-- Food Expense -->
                         <div class="row mb-3">
                             <label for="colFormLabel" class="col-sm-2 col-form-label fw-bold">Food</label>
                             <div class="col-sm-10">
@@ -44,6 +58,8 @@
                                     placeholder="Enter amount spent on Food">
                             </div>
                         </div>
+
+                        <!-- Rent Section -->
                         <div class="row mb-3">
                             <label for="colFormLabel" class="col-sm-2 col-form-label fw-bold">Rent</label>
                             <div class="col-sm-10">
@@ -51,6 +67,8 @@
                                     placeholder="Enter amount spent on Rent">
                             </div>
                         </div>
+
+                        <!-- Clothes Section -->
                         <div class="row mb-3">
                             <label for="colFormLabel" class="col-sm-2 col-form-label fw-bold">Clothes</label>
                             <div class="col-sm-10">
@@ -58,14 +76,19 @@
                                     placeholder="Enter amount spent on Clothes">
                             </div>
                         </div>
-                        <div class="d-flex justify-content-center">
-                            <button id="calculate-btn" type="button" class="btn btn-success">Calculate</button>
 
+                        <!-- Calculate Button -->
+                        <div class="d-flex justify-content-center">
+                            <button id="calculate-button" type="button" class="btn btn-success">Calculate</button>
                         </div>
+
+                        <!-- Total Expense -->
                         <div class="text-center fs-5 mt-2">
                             <p>Total Expenses: Tk. <span id="total-expenses" class="fw-bold">0</span></p>
                             <p>Balance: Tk. <span id="balance" class="fw-bold">0</span></p>
                         </div>
+
+                        <!-- Saving Section -->
                         <div class=" row mb-3">
                             <label for="colFormLabel" class="col-sm-2 col-form-label fw-bold">Savings</label>
                             <div class="col-sm-10">
@@ -73,9 +96,13 @@
                                     placeholder="in percentage %">
                             </div>
                         </div>
+
+                        <!-- Save Button -->
                         <div class="d-flex justify-content-center">
                             <button id="save-button" type="button" class="btn btn-success">Save</button>
                         </div>
+
+                        <!-- Saved Amount -->
                         <div class="text-center fs-5 my-2 ">
                             <p>Saving Amount: Tk. <span id="total-saving" class="fw-bold">0</span></p>
                             <p>Remaining Balance: Tk. <span id="remaining-balance" class="fw-bold">0</span></p>

@@ -1,8 +1,8 @@
-// Buttons
-const calculateBtn = document.getElementById('calculate-btn');
+// Calling Variables for Buttons
+const calculateBtn = document.getElementById('calculate-button');
 const saveBtn = document.getElementById('save-button');
 
-// Expenses
+// Calling Variables for Expenses Section
 const salaryAmount = document.getElementById('salary-amount');
 const foodAmount = document.getElementById('food-amount');
 const rentAmount = document.getElementById('rent-amount');
@@ -11,13 +11,13 @@ const totalExpenses = document.getElementById('total-expenses');
 const balance = document.getElementById('balance');
 
 
-// Savings
+// Calling Variables for Saving Section
 const savingPercentage = document.getElementById('saving-percentage');
 const totalSaving = document.getElementById('total-saving');
 const remainingBalance = document.getElementById('remaining-balance');
 
 
-// Expenses Error
+// Expenses Error Alert
 function expensesError() {
     Swal.fire('Error!!! You can not spend more than you have');
     foodAmount.value = '';
@@ -25,7 +25,7 @@ function expensesError() {
     clothesAmount.value = '';
 }
 
-// Saving Error
+// Saving Error Alert
 function savingError() {
     Swal.fire('Error!!! You can not save more than you have in your Balance');
     savingPercentage.value = '';
@@ -33,7 +33,7 @@ function savingError() {
 
 // Handling Expenses
 function getBalance() {
-
+    // Error Handler
     if (isNaN(salaryAmount.value) || isNaN(foodAmount.value) || isNaN(rentAmount.value) || isNaN(clothesAmount.value)) {
         Swal.fire('Error!!! Please Enter Number');
     }
@@ -42,6 +42,7 @@ function getBalance() {
             Swal.fire('Error!!! Please Enter Positive Number');
         }
         else {
+            // Calculation
             let totalSpent = parseFloat(foodAmount.value) + parseFloat(rentAmount.value) + parseFloat(clothesAmount.value);
             if (totalSpent > salaryAmount.value) {
                 expensesError();
@@ -57,6 +58,7 @@ function getBalance() {
 // Handling Savings
 function getSavedAmount() {
     getBalance();
+    // Error Handler
     if (isNaN(savingPercentage.value)) {
         Swal.fire('Error!! Please Enter Number')
     }
@@ -65,6 +67,7 @@ function getSavedAmount() {
             Swal.fire('Error!!! Please Enter Positive Number');
         }
         else {
+            // Calculation
             let totalSaved = (parseFloat(salaryAmount.value / 100)) * parseFloat(savingPercentage.value);
             if (totalSaved > balance.innerText) {
                 savingError();
